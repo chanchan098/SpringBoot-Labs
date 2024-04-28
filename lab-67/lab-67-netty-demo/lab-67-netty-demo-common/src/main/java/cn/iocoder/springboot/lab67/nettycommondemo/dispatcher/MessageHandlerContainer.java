@@ -61,7 +61,7 @@ public class MessageHandlerContainer implements InitializingBean {
         Class<?> superclass = targetClass.getSuperclass();
         while ((Objects.isNull(interfaces) || 0 == interfaces.length) && Objects.nonNull(superclass)) { // 此处，是以父类的接口为准
             interfaces = superclass.getGenericInterfaces();
-            superclass = targetClass.getSuperclass();
+            superclass = superclass.getSuperclass();
         }
         if (Objects.nonNull(interfaces)) {
             // 遍历 interfaces 数组
